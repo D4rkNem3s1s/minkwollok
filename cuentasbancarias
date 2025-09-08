@@ -1,0 +1,55 @@
+object casa {
+
+    var cuentaEnUso = cuentaCorriente
+    const property gastoMensual = 0
+
+
+
+
+
+    method cambiarCuenta(cuenta) {
+        cuentaEnUso = cuenta
+    }
+
+    method cambioDeMes() {
+        //gastoMensual = 0
+    }
+
+    method totalGastadoMensual() {
+        return gastoMensual
+    }
+
+    method gastar(montoGastado){
+
+    }
+
+}
+
+object cuentaCorriente {
+    var property saldo = 0
+
+    method Depositar(deposito){
+        saldo += deposito
+    }
+
+    method extraer(extraccion){
+        saldo -= extraccion
+    }
+
+
+}
+
+object cuentaConGastos {
+    var property saldo = 0
+
+    method Depositar (deposito) {
+        saldo += deposito
+    }
+
+    method extraer(extraccion) {
+        saldo -= extraccion
+    }
+}
+
+
+
