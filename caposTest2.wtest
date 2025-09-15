@@ -1,0 +1,28 @@
+
+import CaposMafia.*
+
+describe "Capos"{
+    test "1.1" {
+        assert.that(rolando.espacioEnMochila() == 0) 
+        rolando.guardarObjeto(espadaDelDestino)
+        assert.that(rolando.espacioEnMochila() == 1)
+        rolando.guardarObjeto(libroDeHechizos)
+        assert.that(rolando.espacioEnMochila() == 2)
+        assert.notThat(rolando.hayEspacio())
+        rolando.guardarObjeto(collarDivino)
+        assert.that(rolando.espacioEnMochila() == 2)
+    }
+    test "1.2" {
+        assert.that(rolando.espacioEnMochila() == 0)
+        rolando.guardarObjeto(espadaDelDestino)
+        rolando.guardarObjeto(libroDeHechizos)
+        rolando.llegaACasa()
+        assert.that(rolando.espacioEnMochila() == 0)
+        rolando.guardarObjeto(collarDivino)
+        rolando.llegaACasa()
+    }
+
+    test "1.3" {
+
+    }
+}
