@@ -1,5 +1,5 @@
 
-import CaposMafia.*
+import capos.*
 
 describe "Capos"{
     test "1.1" {
@@ -23,6 +23,29 @@ describe "Capos"{
     }
 
     test "1.3" {
+        assert.that(rolando.espacioEnMochila() == 0)
+        rolando.guardarObjeto(espadaDelDestino)
+        rolando.guardarObjeto(collarDivino)
+        rolando.llegaACasa()
+        assert.that(rolando.espacioEnMochila() == 0)
+        rolando.guardarObjeto(armaduraDeAceroValyrio)
+        assert.equals(1, rolando.posecionesConsigo().size())
+        assert.equals(3, rolando.poseciones().size())
+    }
 
+    test "1.4" {
+        rolando.guardarObjeto(espadaDelDestino)
+        rolando.guardarObjeto(libroDeHechizos)
+        rolando.guardarObjeto(collarDivino)
+        rolando.llegaACasa()
+        rolando.guardarObjeto(armaduraDeAceroValyrio)
+        rolando.guardarObjeto(collarDivino)
+        assert.equals(5, rolando.historialEncontrado().size())
+        assert.equals([espadaDelDestino, libroDeHechizos, collarDivino, armaduraDeAceroValyrio, collarDivino], rolando.historialEncontrado())
+    }
+
+    test "2.1" {
+        rolando.usarEspada()
+        assert.equals(1, espadaDelDestino.usosDeEspada())
     }
 }
